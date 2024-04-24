@@ -13,4 +13,8 @@ b. `amqp://` menunjukkan protokol yang digunakan, yaitu AMQP (Advanced Message Q
 
 Grafik Queued messages RabbitMQ saya menunjukkan angka 15, hal ini berarti terdapat total 15 pesan yang saat ini menunggu di queue untuk diproses oleh subscriber. Jumlah ini merupakan total pesan yang telah dikeluarkan oleh publisher namun belum diambil atau diproses oleh subscriber.
 
+### Reflection 3
 ![alt text](https://github.com/rafizia/module-8-subscriber/blob/master/image/RabbitMQ-Slow-2.png?raw=true)
+
+Saat menjalankan tiga subscriber terlihat bahwa grafik message rate di RabbitMQ menjadi terlihat lebih curam dari sebelumnya, hal ini karena terjadi peningkatan kecepatan pemrosesan pesan. Dengan lebih banyak subscriber yang aktif, sistem mampu memproses pesan yang masuk dengan lebih cepat. Setiap subscriber secara individu mengambil pesan dari queue dan memprosesnya, sehingga lebih banyak subscriber berarti dapat meningkatan kapasitas pemrosesan secara keseluruhan.
+Untuk peningkatan, jika subscriber perlu mengelola pesan secara asinkron atau dalam jumlah besar, maka kita bisa menggunakan model konkurensi untuk meningkatkan efisiensi dan kinerja.
